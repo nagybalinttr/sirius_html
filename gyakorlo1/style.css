@@ -1,0 +1,22 @@
+body{
+  background-color: #FF6347;
+  color: #AFEEEE;
+}
+form{
+  display: inline-grid;
+}
+.wrappaper{
+  position: relative;
+}
+.center{
+  text-align: center;
+}
+.center-align{
+  margin: 0 auto !important;
+}
+
+#tablazat{
+  background-color: #A52A2A !important;
+  width: 700px;
+  border: 0;
+}
