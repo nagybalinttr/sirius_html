@@ -1,0 +1,40 @@
+/*
+  UNIVERSAL CLASSES
+*/
+.center{
+  text-align: center;
+}
+
+body {
+  background-color: #00FFFF;
+  color: #00008B;
+}
+
+table tr td {
+  vertical-align: top;
+}
+
+img#repulo {
+  width: 700px;
+  height: 100px;
+}
+
+img#csomag {
+  width: 250px;
+  height: 165px;
+}
+
+form {
+  display: inline-grid;
+}
+
+button {
+  background-color: white;
+}
+
+#tablazat {
+  width: 700px;
+  border: 0;
+  background-color: #B8860B;
+  margin: 0 auto;
+}

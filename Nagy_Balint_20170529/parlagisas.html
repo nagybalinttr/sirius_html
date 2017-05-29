@@ -1,0 +1,82 @@
+<html>
+<head>
+  <title>parlagisas</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="style.css?ver=201705291920">
+  <script>
+    function szamol() {
+      var weight = document.getElementById('weight').value;
+      var distance = document.getElementById('distance').value;
+      if( (weight != '' && distance != '') && (weight > 0 && distance > 0) ){
+        weight = parseFloat(weight);
+        distance = parseFloat(distance);
+        var price = (weight * 100) + 1500 + (distance * 150);
+        alert('Ár: ' + price);
+      } else {
+        alert('Hibas adatbevitel!');
+      }
+    }
+  </script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="center">
+    <img src="repulo.jpg" id="repulo" />
+    <h1>Parlagi sas légitársaság</h1>
+    <div>
+      Légitársaságunk az egzotikus uticélok szakértõje. Vállaljuk, hogy kényelmesen és a lehetõ leggyorsabban eljuthat oda ahová csak szeretne.<br />Repülõjegy árakról érdeklõdjön az utazási irodánkban.
+    </div>
+  </div>
+  <table id="tablazat">
+    <tr>
+      <td>
+        <img id="csomag" src="csomag.png" />
+      </td>
+      <td>
+        <h2>Csomagszállítás díja</h2>
+        <div>
+          A csomagszállítás díja a repülõjegy áron felül értendõ.
+        </div>
+	      <ul>
+          <li>Alapdíj:1500 Ft</li>
+          <li>Csomag viteldíj:100 Ft kilogrammonként</li>
+          <li>Kilomter díj:150 Ft</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>Csomagdíj kalkulátor</h2>
+        <form>
+          <label for="weight">Súly:</label>
+          <input type="number" name="weight" id="weight" />
+          <label for="distance">km:</label>
+          <input type="number" name="distance" id="distance" />
+          <button type="button" onclick="szamol()">OK</button>
+        </form>
+      </td>
+      <td>
+        Számold ki mennyibe kerül csomagod szállítása! <br />
+        Írd be a csomagod súlyát és az uticélod távolságát km-ben (természetesen légvonalban)! <br />
+        A kalkulátor máris kiszámolja mennyi lesz a csomagod szállításának díja.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>Szálloda kereső</h2>
+        <form action="hotel.php" method="post">
+          <label for="country">Ország:</label>
+          <input type="text" name="country" id="country" />
+          <button type="submit">Keres</button>
+        </form>
+      </td>
+      <td>
+        <div>
+          Szállodakeresõ szolgáltatásunkkal gyorsan és egyszerûen megtudhatja melyik uticélunkhoz milyen szállodákat kínálunk.
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
