@@ -1,55 +1,57 @@
 <html>
+
 <head>
   <title>Biosziget</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="biosziget.css">
   <script>
-  function tti() {
-    var suly = document.getElementById('suly').value;
-    var magassag = document.getElementById('magassag').value;
-    if( (suly != '' && magassag != '') && (suly > 0 && magassag > 0) ){
-      suly = parseFloat(suly);
-      magassag = parseFloat(magassag);
-      var tti = (suly / magassag) * magassag * 0.0001;
-      alert('Index: ' + tti);
-    } else {
-      alert('Hibas adatbevitel!');
+    function tti() {
+      var suly = document.getElementById('suly').value;
+      var magassag = document.getElementById('magassag').value;
+      if ((suly != '' && magassag != '') && (suly > 0 && magassag > 0)) {
+        suly = parseFloat(suly);
+        magassag = parseFloat(magassag);
+        var tti = (suly / magassag) * magassag * 0.0001;
+        alert('Index: ' + tti);
+      } else {
+        alert('Hibas adatbevitel!');
+      }
     }
-  }
   </script>
 </head>
+
 <body>
-<div class="wrapper">
-  <div class="center">
-    <h1>Biosziget</h1>
-    <div>
-      Ahol az egészség lakik.<br />A biosziget segít neked, hogy betarthasd a kiegyensúlyozott étrend szabályait!
+  <div class="wrapper">
+    <div class="center">
+      <h1>Biosziget</h1>
+      <div>
+        Ahol az egészség lakik.<br />A biosziget segít neked, hogy betarthasd a kiegyensúlyozott étrend szabályait!
+      </div>
     </div>
-  </div>
-  <table id="tablazat">
-    <tr>
-      <td>
-        Ismerd meg a táplálék piramist!
-        <br />
-        A táplálékpiramist a táplálkozással foglalkozó szakemberek idõrõl-idõre átírják, és sokat vitatkoznak róla. Az alábbi kép az egyik legújabb táplálékpiramist mutatja, ahol helyet kaptak a teljes kiõrlésû gabonák, és jelentõsen lecsökkentek az állati eredetû fehérjék. A táplálékpiramis általános kiindulási alapnak tekinthetõ a napi élelmiszerek bevásárlásakor is. A táplálékpiramis csúcsa felé haladva egyre kevesebb kell az ott levõ élelmiszerbõl. Az alábbi táplálékpiramisról a csúcs el is hagyható.
-        <br />
-        Nem tudod helyesen étkezel-e? Számold ki testtömeg indexed!
-      </td>
-      <td>
-        <img id="piramis" src="piramis.jpg" />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h2>Testtömeg-index kategóriák</h2>
-        <ul>
-          <li>18 alatt: soványság</li>
-          <li>18-25 között: normál testsúly</li>
-          <li>25-30 között: elhízott</li>
-          <li>30 felett: elhízott</li>
-        </ul>
-      </td>
-      <td>
+    <table id="tablazat">
+      <tr>
+        <td>
+          Ismerd meg a táplálék piramist!
+          <br /> A táplálékpiramist a táplálkozással foglalkozó szakemberek idõrõl-idõre átírják, és sokat vitatkoznak róla. Az alábbi kép az egyik legújabb táplálékpiramist mutatja, ahol helyet kaptak a teljes kiõrlésû gabonák, és jelentõsen lecsökkentek
+          az állati eredetû fehérjék. A táplálékpiramis általános kiindulási alapnak tekinthetõ a napi élelmiszerek bevásárlásakor is. A táplálékpiramis csúcsa felé haladva egyre kevesebb kell az ott levõ élelmiszerbõl. Az alábbi táplálékpiramisról a
+          csúcs el is hagyható.
+          <br /> Nem tudod helyesen étkezel-e? Számold ki testtömeg indexed!
+        </td>
+        <td>
+          <img id="piramis" src="piramis.jpg" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Testtömeg-index kategóriák</h2>
+          <ul>
+            <li>18 alatt: soványság</li>
+            <li>18-25 között: normál testsúly</li>
+            <li>25-30 között: elhízott</li>
+            <li>30 felett: elhízott</li>
+          </ul>
+        </td>
+        <td>
           <h2>TTI kalkulátor</h2>
           <form id="tti">
             <label for="suly">Test súly:</label>
@@ -58,22 +60,23 @@
             <input type="text" name="magassag" id="magassag" required />
             <button type="button" onclick="tti()">Számol</button>
           </form>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h2>Kalóriaérték számítás</h2>
-        <form method="post" id="kaloria" action="kaloria.php">
-          <label for="etel">Étel neve:</label>
-          <input type="text" name="etel" id="etel" />
-          <button type="submit">Keres</button>
-        </form>
-      </td>
-      <td>
-        A kalóriaérték számító alkalmazásunkkal megtudhatja mennyi kalóriát fehérjét szénhidrátot és zsírt tartalmaznak egyes ételek.
-      </td>
-    </tr>
-  </table>
-</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Kalóriaérték számítás</h2>
+          <form method="post" id="kaloria" action="kaloria.php">
+            <label for="etel">Étel neve:</label>
+            <input type="text" name="etel" id="etel" />
+            <button type="submit">Keres</button>
+          </form>
+        </td>
+        <td>
+          A kalóriaérték számító alkalmazásunkkal megtudhatja mennyi kalóriát fehérjét szénhidrátot és zsírt tartalmaznak egyes ételek.
+        </td>
+      </tr>
+    </table>
+  </div>
 </body>
+
 </html>

@@ -1,35 +1,36 @@
 /*
   UNIVERSAL CLASSES
 */
-.center{
+
+.center {
   text-align: center;
 }
 
-body{
+body {
   background-color: #F5F5DC;
   color: #006400;
 }
 
-table tr td{
+table tr td {
   vertical-align: top;
 }
 
-form{
+form {
   display: inline-grid;
 }
 
-button{
+button {
   background-color: white;
 }
 
-#tablazat{
+#tablazat {
   width: 900px;
   border: 0;
   background-color: #DEB887;
   margin: 0 auto;
 }
 
-#tablazat img#piramis{
+#tablazat img#piramis {
   width: 500px;
   height: 380px;
 }

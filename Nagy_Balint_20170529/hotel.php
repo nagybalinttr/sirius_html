@@ -1,44 +1,45 @@
 <?php
-CONST servername = "127.0.0.1";
-CONST username = "sirius";
-CONST password = "sirius";
-CONST dbname = "hotel";
+const servername = "127.0.0.1";
+const username = "sirius";
+const password = "sirius";
+const dbname = "hotel";
 
-  function keres($value = null){
-    if($value){
-      $conn = new mysqli(servername, username, password, dbname);
-      mysqli_set_charset($conn,"utf8");
-      if ($conn->connect_error) {
-        die("Kapcsolodasi hiba: " . $conn->connect_error);
-      }
+  function keres($value = null)
+  {
+      if ($value) {
+          $conn = new mysqli(servername, username, password, dbname);
+          mysqli_set_charset($conn, "utf8");
+          if ($conn->connect_error) {
+              die("Kapcsolodasi hiba: " . $conn->connect_error);
+          }
 
-			$sql = "SELECT helyseg.nev, helyseg.orszag, szalloda.sznev
+          $sql = "SELECT helyseg.nev, helyseg.orszag, szalloda.sznev
       FROM helyseg INNER JOIN szalloda ON helyseg.az = szalloda.h_az WHERE helyseg.orszag LIKE '".$value."'";
 
-      $eredmeny = array();
-      $eredmeny = $conn->query($sql);
-      $conn->close;
+          $eredmeny = array();
+          $eredmeny = $conn->query($sql);
+          $conn->close;
 
-      if($eredmeny->num_rows > 0){
-        $sorok = array();
-        while($sor = $eredmeny->fetch_assoc()){
-          $sorok[] = $sor;
-        }
-        return $sorok;
+          if ($eredmeny->num_rows > 0) {
+              $sorok = array();
+              while ($sor = $eredmeny->fetch_assoc()) {
+                  $sorok[] = $sor;
+              }
+              return $sorok;
+          } else {
+              return false;
+          }
       } else {
-        return FALSE;
+          return false;
       }
-    } else {
-      return FALSE;
-    }
   }
 
   $talalatok = null;
-  if(isset($_POST['country'])){
-    $orszag = $_POST['country'];
-    $talalatok = keres($orszag);
+  if (isset($_POST['country'])) {
+      $orszag = $_POST['country'];
+      $talalatok = keres($orszag);
   } else {
-    $talalatok = FALSE;
+      $talalatok = false;
   }
 ?>
 <html>
@@ -52,8 +53,8 @@ CONST dbname = "hotel";
     <div class="center">
       <?php
       //ha a keresett értek ismétlpdik az adatbázisban
-      if(gettype($talalatok) == 'array'){
-        echo "<table class='center-align' id='tablazat'>
+      if (gettype($talalatok) == 'array') {
+          echo "<table class='center-align' id='tablazat'>
           <tr>
             <td>
               Település neve:
@@ -65,16 +66,16 @@ CONST dbname = "hotel";
               Szálloda név:
             </td>
           </tr>";
-        foreach ($talalatok as $talalat) {
-          echo "<tr>";
-          foreach ($talalat as $value) {
-            echo "<td>" . $value . "</td>";
+          foreach ($talalatok as $talalat) {
+              echo "<tr>";
+              foreach ($talalat as $value) {
+                  echo "<td>" . $value . "</td>";
+              }
+              echo "</tr>";
           }
-          echo "</tr>";
-        }
-        echo "</table>";
-      } elseif(!$talalatok){
-        echo "<h2>Nincs találat!</h2>";
+          echo "</table>";
+      } elseif (!$talalatok) {
+          echo "<h2>Nincs találat!</h2>";
       }
       ?>
     </div>

@@ -1,98 +1,88 @@
-<html >
+<html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="villamfutar.css">
-<title>villamfutar</title>
-<script language="javascript">
- function szallitas()
- {
-   var meret=parseInt(document.urlap.meret.value);
-   var km=parseInt(document.urlap.km.value);
-   
-   var dij=(meret*100)+2000+(km*400);
-   alert("A viteldíjad:"+ dij);
-   
- }
-</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="villamfutar.css">
+  <title>villamfutar</title>
+  <script language="javascript">
+    function szallitas() {
+      var meret = parseInt(document.urlap.meret.value);
+      var km = parseInt(document.urlap.km.value);
+
+      var dij = (meret * 100) + 2000 + (km * 400);
+      alert("A viteldíjad:" + dij);
+
+    }
+  </script>
 
 </head>
-<body >
-<br>
-<p id="bek1"> 
-		<img  src="futar.jpg">
-		 <br>
-		</p>
-		
-<h1 align="center">Villámfutár</h1>
+
+<body>
+  <br>
+  <p id="bek1">
+    <img src="futar.jpg">
+    <br>
+  </p>
+
+  <h1 align="center">Villámfutár</h1>
 
 
-<table >
-<tr >
-	<td id="cell1">
-	<h2>Díjszabás</h2>
-	<ul>	
-	<li>Alapdíj:2000 Ft
-	<li>Csomag viteldíj:100 Ft köbcentiméterenként
-	<li>Kilomter díj:400 Ft
-	</ul>
-	</td>
+  <table>
+    <tr>
+      <td id="cell1">
+        <h2>Díjszabás</h2>
+        <ul>
+          <li>Alapdíj:2000 Ft
+            <li>Csomag viteldíj:100 Ft köbcentiméterenként
+              <li>Kilomter díj:400 Ft
+        </ul>
+      </td>
 
-	<td id="cell2">
+      <td id="cell2">
 
-Mert elviszünk bármit bárhová a lehető leggyorsabban.
-Nincs sorbanállás velünk egyszerűen intézheted a csomagküldést!<br><br>
+        Mert elviszünk bármit bárhová a lehető leggyorsabban. Nincs sorbanállás velünk egyszerűen intézheted a csomagküldést!<br><br> A többi futárszolgálathoz hasonlóan mi is a lakosság kényelmét szolgáljuk azzal, hogy elszállítjuk csomagjaikat az ország
+        bármely szegletébe. De miben más a villámfutár? A villámfutár rendelkezésedre áll a nap 24 órájában! Válassz minket és hozz egy jó döntést!
+      </td>
+    </tr>
+    <tr id="masodiksor">
+      <td id="cell1">
+        <h2>Viteldíj kalkulátor</h2>
 
-A többi futárszolgálathoz hasonlóan mi is a lakosság kényelmét szolgáljuk azzal, 
-	hogy elszállítjuk csomagjaikat az ország bármely szegletébe. 
-	De miben más a villámfutár?
-	A villámfutár rendelkezésedre áll a nap 24 órájában!
-	Válassz minket és hozz egy jó döntést!
-	</td>
-</tr>
-<tr id="masodiksor">
-	<td id="cell1">
-	<h2>Viteldíj kalkulátor</h2>
-	
-	<form name="urlap">
-	méret:
-	<br>
-	<input type="text" name="meret" >
-	<br>
-	km:
-	<br>
-	<input type="text" name="km">
-	<br>
-	<input type="button" value="OK" onClick="szallitas()">
-	</form>
-	</td>
-	
-	<td >
-	Számold ki mennyibe kerül csomagod kiszállítása! 
-Írd be a termék méretét köbméterben és a kiszállítás távolságát km-ben! 
-A kalkulátor máris kiszámolja mennyi lesz a csomagküldés díja.
+        <form name="urlap">
+          méret:
+          <br>
+          <input type="text" name="meret">
+          <br> km:
+          <br>
+          <input type="text" name="km">
+          <br>
+          <input type="button" value="OK" onClick="szallitas()">
+        </form>
+      </td>
 
-	
-	</td>
-</tr >
-<tr id="masodiksor">
-	<td id="cell1">
-	<h2>Futárkereső</h2>
-	Futár neve:
-	
-	<form name="urlap2" method="post" action="futar.php">
-	<input  type="text" name="futar">
-	<br>
-	<input type="submit" value="Keres" ></form>
-	
-	
-	</td>
-	
-	<td id="cell2">
-	Futárkereső szolgáltatásunkkal a megadott futár kiszállítási címeit és 
-	megrendelőit tekintheti meg.</td>
-	
-</tr>
-</table>
+      <td>
+        Számold ki mennyibe kerül csomagod kiszállítása! Írd be a termék méretét köbméterben és a kiszállítás távolságát km-ben! A kalkulátor máris kiszámolja mennyi lesz a csomagküldés díja.
+
+
+      </td>
+    </tr>
+    <tr id="masodiksor">
+      <td id="cell1">
+        <h2>Futárkereső</h2> Futár neve:
+
+        <form name="urlap2" method="post" action="futar.php">
+          <input type="text" name="futar">
+          <br>
+          <input type="submit" value="Keres"></form>
+
+
+      </td>
+
+      <td id="cell2">
+        Futárkereső szolgáltatásunkkal a megadott futár kiszállítási címeit és megrendelőit tekintheti meg.</td>
+
+    </tr>
+  </table>
 
 </body>
 

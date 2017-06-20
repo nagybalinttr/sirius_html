@@ -1,46 +1,47 @@
 <?php
-CONST servername = "127.0.0.1";
-CONST username = "sirius";
-CONST password = "sirius";
-CONST dbname = "futar";
+const servername = "127.0.0.1";
+const username = "sirius";
+const password = "sirius";
+const dbname = "futar";
 
-  function keres($value = null){
-    if($value){
-      $conn = new mysqli(servername, username, password, dbname);
-      mysqli_set_charset($conn,"utf8");
-      if ($conn->connect_error) {
-        die("Kapcsolodasi hiba: " . $conn->connect_error);
-      }
+  function keres($value = null)
+  {
+      if ($value) {
+          $conn = new mysqli(servername, username, password, dbname);
+          mysqli_set_charset($conn, "utf8");
+          if ($conn->connect_error) {
+              die("Kapcsolodasi hiba: " . $conn->connect_error);
+          }
 
-			$sql = "SELECT futar.fnev, vevo.vnev, vevo.vcim
+          $sql = "SELECT futar.fnev, vevo.vnev, vevo.vcim
 			FROM ((futar
 			INNER JOIN rendeles ON futar.fazon = rendeles.fazon)
 			INNER JOIN vevo ON rendeles.vazon = vevo.vazon) WHERE futar.fnev LIKE '".$value."';";
 
-      $eredmeny = array();
-      $eredmeny = $conn->query($sql);
-      $conn->close;
+          $eredmeny = array();
+          $eredmeny = $conn->query($sql);
+          $conn->close;
 
-      if($eredmeny->num_rows > 0){
-        $sorok = array();
-        while($sor = $eredmeny->fetch_assoc()){
-          $sorok[] = $sor;
-        }
-        return $sorok;
+          if ($eredmeny->num_rows > 0) {
+              $sorok = array();
+              while ($sor = $eredmeny->fetch_assoc()) {
+                  $sorok[] = $sor;
+              }
+              return $sorok;
+          } else {
+              return false;
+          }
       } else {
-        return FALSE;
+          return false;
       }
-    } else {
-      return FALSE;
-    }
   }
 
   $talalatok = null;
-  if(isset($_POST['nev'])){
-    $futar = $_POST['nev'];
-    $talalatok = keres($futar);
+  if (isset($_POST['nev'])) {
+      $futar = $_POST['nev'];
+      $talalatok = keres($futar);
   } else {
-    $talalatok = FALSE;
+      $talalatok = false;
   }
 ?>
 <html>
@@ -57,9 +58,9 @@ CONST dbname = "futar";
   <div class="center">
     <h1>Villámfutár</h1>
 		<?php
-	  //ha a keresett értek ismétlpdik az adatbázisban
-	  if(gettype($talalatok) == 'array'){
-	    echo "<table class='center-align' id='tablazat'>
+      //ha a keresett értek ismétlpdik az adatbázisban
+      if (gettype($talalatok) == 'array') {
+          echo "<table class='center-align' id='tablazat'>
 	      <tr>
 	        <td>
 	          Futár név
@@ -71,18 +72,18 @@ CONST dbname = "futar";
 	          Vevő cím
 	        </td>
 	      </tr>";
-	    foreach ($talalatok as $talalat) {
-	      echo "<tr>";
-	      foreach ($talalat as $value) {
-	        echo "<td>" . $value . "</td>";
-	      }
-	      echo "</tr>";
-	    }
-	    echo "</table>";
-	  } elseif(!$talalatok){
-	    echo "<h2>Nincs találat!</h2>";
-	  }
-	  ?>
+          foreach ($talalatok as $talalat) {
+              echo "<tr>";
+              foreach ($talalat as $value) {
+                  echo "<td>" . $value . "</td>";
+              }
+              echo "</tr>";
+          }
+          echo "</table>";
+      } elseif (!$talalatok) {
+          echo "<h2>Nincs találat!</h2>";
+      }
+      ?>
 	  <a href="villamfutar.html">Vissza az előző oldalra</a>
   </div>
 </div>

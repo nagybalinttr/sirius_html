@@ -1,21 +1,25 @@
-body{
+body {
   background-color: #FF6347;
   color: #AFEEEE;
 }
-form{
+
+form {
   display: inline-grid;
 }
-.wrappaper{
+
+.wrappaper {
   position: relative;
 }
-.center{
+
+.center {
   text-align: center;
 }
-.center-align{
+
+.center-align {
   margin: 0 auto !important;
 }
 
-#tablazat{
+#tablazat {
   background-color: #A52A2A !important;
   width: 700px;
   border: 0;

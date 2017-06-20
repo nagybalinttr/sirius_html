@@ -1,81 +1,77 @@
 <html>
+
 <head>
   <title>villamfutar</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="style.css">
   <script>
-  //(meret*100)+2000+(km*400)
-  function szamol() {
-    var meret = document.getElementById("meret").value;
-    var km = document.getElementById("km").value;
-    if( meret != '' && km != '' && meret > 0 && km > 0 ){
-      km = parseFloat(km);
-      meret = parseFloat(meret);
-      var dij = (meret * 100) + 2000 + (km * 400);
-      alert('Díj: ' + dij);
+    //(meret*100)+2000+(km*400)
+    function szamol() {
+      var meret = document.getElementById("meret").value;
+      var km = document.getElementById("km").value;
+      if (meret != '' && km != '' && meret > 0 && km > 0) {
+        km = parseFloat(km);
+        meret = parseFloat(meret);
+        var dij = (meret * 100) + 2000 + (km * 400);
+        alert('Díj: ' + dij);
+      }
     }
-  }
   </script>
 </head>
+
 <body>
-<div class="wrapper">
-  <div class="center-align" style="width: 700px;">
-    <img class="center-align" src="futar.jpg" width="700" height="100" class="center-align" />
+  <div class="wrapper">
+    <div class="center-align" style="width: 700px;">
+      <img class="center-align" src="futar.jpg" width="700" height="100" class="center-align" />
+    </div>
+    <div class="center">
+      <h1>Villámfutár</h1>
+      <table id="tablazat" class="center-align">
+        <tr>
+          <td>
+            <h2>Díjszabás</h2>
+            <ul>
+              <li>
+                Alapdíj:2000 Ft
+              </li>
+              <li>
+                Kilomter díj:400 Ft
+              </li>
+              <li>
+                Csomag viteldíj:100 Ft köbcentiméterenként
+              </li>
+            </ul>
+          </td>
+          <td>
+            Mert elviszünk bármit bárhová a lehető leggyorsabban.<br /> Nincs sorbanállás velünk egyszerűen intézheted a csomagküldést!<br><br> A többi futárszolgálathoz hasonlóan mi is a lakosság kényelmét szolgáljuk azzal, hogy elszállítjuk csomagjaikat
+            az ország bármely szegletébe. <br /><br /> De miben más a villámfutár?<br /><br /> A villámfutár rendelkezésedre áll a nap 24 órájában!<br /> Válassz minket és hozz egy jó döntést!
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h2>Viteldíj kalkulátor</h2>
+            <form id="vitel">
+              <label for="meret">Méret:</label>
+              <input type="text" name="meret" id="meret" />
+              <label for="km">KM:</label>
+              <input type="km" name="km" id="km" />
+              <button type="button" onclick="szamol()">Ok</button>
+            </form>
+            <h2>Futárkereső:</h2>
+            <form action="futar.php" method="post">
+              <label for="nev">Név:</label>
+              <input type="nev" name="nev" id="nev" />
+              <button type="submit">Keresés</button>
+            </form>
+          </td>
+          <td>
+            Számold ki mennyibe kerül csomagod kiszállítása! Írd be a termék méretét köbméterben és a kiszállítás távolságát km-ben! <br /> A kalkulátor máris kiszámolja mennyi lesz a csomagküldés díja.
+            <br /><br /> Futárkereső szolgáltatásunkkal a megadott futár kiszállítási címeit és megrendelőit tekintheti meg.
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
-  <div class="center">
-    <h1>Villámfutár</h1>
-    <table id="tablazat" class="center-align">
-      <tr>
-        <td>
-          <h2>Díjszabás</h2>
-          <ul>
-            <li>
-              Alapdíj:2000 Ft
-            </li>
-            <li>
-            	Kilomter díj:400 Ft
-            </li>
-            <li>
-              Csomag viteldíj:100 Ft köbcentiméterenként
-            </li>
-          </ul>
-        </td>
-        <td>
-          Mert elviszünk bármit bárhová a lehető leggyorsabban.<br />
-          Nincs sorbanállás velünk egyszerűen intézheted a csomagküldést!<br><br>
-A többi futárszolgálathoz hasonlóan mi is a lakosság kényelmét szolgáljuk azzal, hogy elszállítjuk csomagjaikat az ország bármely szegletébe. <br /><br />
-De miben más a villámfutár?<br /><br />
-A villámfutár rendelkezésedre áll a nap 24 órájában!<br />
-Válassz minket és hozz egy jó döntést!
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h2>Viteldíj kalkulátor</h2>
-          <form id="vitel">
-            <label for="meret">Méret:</label>
-            <input type="text" name="meret" id="meret" />
-            <label for="km">KM:</label>
-            <input type="km" name="km" id="km" />
-            <button type="button" onclick="szamol()">Ok</button>
-          </form>
-          <h2>Futárkereső:</h2>
-          <form action="futar.php" method="post">
-            <label for="nev">Név:</label>
-            <input type="nev" name="nev" id="nev" />
-            <button type="submit">Keresés</button>
-          </form>
-        </td>
-        <td>
-          Számold ki mennyibe kerül csomagod kiszállítása!
-          Írd be a termék méretét köbméterben és a kiszállítás távolságát km-ben! <br />
-          A kalkulátor máris kiszámolja mennyi lesz a csomagküldés díja.
-          <br /><br />
-          Futárkereső szolgáltatásunkkal a megadott futár kiszállítási címeit és megrendelőit tekintheti meg.
-        </td>
-      </tr>
-    </table>
-  </div>
-</div>
 </body>
+
 </html>
