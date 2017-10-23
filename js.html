@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function loop(speed) {
+      var valami = setInterval(function() {
+        var a = getRandomInt(0, 255);
+        var b = getRandomInt(0, 255);
+        var c = getRandomInt(0, 255);
+        document.body.style.backgroundColor = 'rgb(' + a + ',' + b + ',' + c + ')';
+      }, speed);
+    }
+
+    function stop() {
+      location.reload();
+    }
+
+    function color(m) {
+      if (m == 'e') {
+        var a = getRandomInt(0, 255);
+        var b = getRandomInt(0, 255);
+        var c = getRandomInt(0, 255);
+        document.body.style.backgroundColor = 'rgb(' + a + ',' + b + ',' + c + ')';
+      } else if (m == 'r') {
+        loop(150);
+      } else if (m == 's') {
+        stop();
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <button onclick="color('e')">1x</button>
+  <button onclick="color('r')">start</button>
+  <button onclick="color('s')">stop</button>
+</body>
+
+</html>
