@@ -1,0 +1,43 @@
+{
+  "emberek": [
+    {
+      "vezeteknev": "Benke",
+      "keresztnev": "Szabolcs",
+      "diak": true
+    },
+    {
+      "vezeteknev": "Teigler",
+      "keresztnev": "Tibor",
+      "diak": true
+    },
+    {
+      "vezeteknev": "Kovács",
+      "keresztnev": "Attila Róbert",
+      "diak": false
+    },
+    {
+      "vezeteknev": "Kiss",
+      "keresztnev": "Attila",
+      "diak": true
+    },
+    {
+      "vezeteknev": "Fórizs",
+      "keresztnev": "Péter (Zsvel mint a rizs :D)",
+      "diak": true
+    },
+    {
+      "vezeteknev": "Kakukk",
+      "keresztnev": "Fioka"
+    },
+    {
+      "vezeteknev": "Ungvári",
+      "keresztnev": "Zsolt",
+      "diak": true
+    },
+    {
+      "vezeteknev": "Kovács",
+      "keresztnev": "Péter",
+      "diak": true
+    }
+  ]
+}
