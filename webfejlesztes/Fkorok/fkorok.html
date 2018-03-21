@@ -1,0 +1,34 @@
+<!-- 
+    Készítsen egy weblapot, melyen rajzol három körlapot, 
+    egy zöldet, egy pirosat, és egy kéket.
+A körlapok vízszintes irányban középen, 
+ függőleges irányban az oldal negyedénél, felénél, 
+és háromnegyedénél legyenek.
+A zöld és a kék körlapra kattintva változzon a körlapok színe pirosra, 
+írja ki üzenetként a körlapok azonosítójának nevét.
+A piros körlapra kattintva jelenjen meg üzenetként a RESET felirat, 
+és töltse be újra a weblapot.
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="fkorok.css">
+     <title>Fkorok</title>
+ </head>
+ <body>
+     <svg>
+         <circle id="green" cx="40" cy="40" r="40" fill="green" onClick="red(this)"></circle>
+     </svg>
+     <svg>
+         <circle id="red" cx="40" cy="40" r="40" fill="red" values="" onClick="reset()" onmouseover="word()" onmouseout="word2()"></circle>
+            <text id="text" fill="#ff0000" font-size="20" font-family="Verdana" x="10" y="50" onClick="reset()" onmouseover="word()" onmouseout="word2()">RESET</text>
+     </svg>
+     <svg>
+         <circle id="blue" cx="40" cy="40" r="40" fill="blue" onClick="red(this)"></circle>
+     </svg>
+     <script src="fkorok.js">
+     </script>
+ </body>
+ </html>

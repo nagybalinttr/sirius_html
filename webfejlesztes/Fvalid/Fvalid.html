@@ -1,0 +1,96 @@
+<!--
+Készítsen egy weboldalt, mely a következő adatokat kéri be:
+Text mezőben: Név, Email, IRSZ
+Választó mezőben kedvenc szín megadása (4 db)
+Többes választó mezőben háziállatok megadása (4 db)
+dropboxban szerepkör kiválasztása (érdeklődő, eladó, vásárló )
+Gomb: Regisztrál; 
+
+Az egész form legyen táblázatba foglalva
+
+A Regisztrál gombra kattintva validálja (ellenőrizze) a beírt értékeket.
+Ha valamelyik érték nem megfelelő, küldjön üzenetet a felhasználó számára.
+-->  
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Fvalid</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Név:
+                </td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                    <td>
+                        Email:
+                    </td>
+                    <td>
+                        <input type="text" id="email">
+                    </td>
+            </tr>
+            <tr>
+                    <td>
+                        IRSZ:
+                    </td>
+                    <td>
+                        <input type="text" id="irsz">
+                    </td>
+            </tr>
+            <tr>
+                    <td>
+                        Kedvenc szín:
+                    </td>
+                    <td>
+                        <input type="radio" id="red" value="piros">Piros
+                        <br>
+                        <input type="radio" id="green" value="zold">Zöld
+                        <br>
+                        <input type="radio" id="blue" value="kek">Kék
+                        <br>
+                        <input type="radio" id="purple" value="lila">Lila
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Kedvenc háziállatok:
+                    </td>
+                    <td>
+                        <input type="checkbox" id="dog" value="kutya">Kutya
+                        <br>                            
+                        <input type="checkbox" id="cat" value="macska">Macska
+                        <br>
+                        <input type="checkbox" id="snake" value="kigyo">Kígyó
+                        <br>
+                        <input type="checkbox" id="mouse" value="eger">Egér
+                    </td>
+                </tr>
+                <td>
+                    Szerepkör:
+                </td>
+                 <td>
+                    <select id="check">
+                        <option value="erdeklodo">Érdeklődő</option>
+                        <option value="elado">Eladó</option>
+                        <option value="vasarlo">Vásárló</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="registrator()">Regisztrál</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="test">
+    </div>
+</body>
+</html>

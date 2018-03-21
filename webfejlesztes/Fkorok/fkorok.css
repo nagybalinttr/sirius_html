@@ -1,0 +1,18 @@
+svg {
+    position: absolute;
+    top: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+}
+
+svg:nth-child(1) {
+    left: calc(25% - 40px);
+}
+
+svg:nth-child(2) {
+    left: calc(50% - 40px);
+}
+
+svg:nth-child(3) {
+    right: calc(25% - 40px);
+}
